@@ -1,5 +1,5 @@
 {
-  "name": "stylelint",
+  "name": "uni-board",
   "version": "1.0.0",
   "scripts": {
     "build": "parcel build src/*.html --dist-dir dist"
