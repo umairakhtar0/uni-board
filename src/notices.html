@@ -1,1 +1,79 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Notices - UCP Notice Board</title>
+		<link rel="stylesheet" href="../styles/style.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="brand" href="index.html">UCP Notice Board</a>
+				<button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+				<nav class="main-nav" aria-label="Main navigation">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="admissions.html">Admissions</a></li>
+						<li><a href="exams.html">Exams</a></li>
+						<li><a href="notices.html" class="active">Notices</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 
+		<main class="container">
+			<section class="hero">
+				<h1>All Notices</h1>
+				<p class="lede">Stay updated with the latest announcements, important dates, and university news.</p>
+			</section>
+
+			<section class="notices-section">
+				<div class="notices-header">
+					<h2>Recent Notices</h2>
+					<input id="search" class="search" type="search" placeholder="Search notices by title or keyword">
+				</div>
+
+				<div id="notices" class="notices-grid">
+					<!-- Notice cards will be populated here -->
+					<article class="notice-card">
+						<h3>Semester Start Date</h3>
+						<p class="meta">Published: Jan 10, 2026 • Academics</p>
+						<p class="excerpt">Spring semester classes will begin on February 2, 2026. All students must complete registration before this date.</p>
+					</article>
+
+					<article class="notice-card">
+						<h3>Midterm Exam Schedule Released</h3>
+						<p class="meta">Published: Jan 8, 2026 • Exams</p>
+						<p class="excerpt">The midterm examination timetable for all departments has been published. Please check your department's notice board for details.</p>
+					</article>
+
+					<article class="notice-card">
+						<h3>Library Extended Hours</h3>
+						<p class="meta">Published: Jan 5, 2026 • Facilities</p>
+						<p class="excerpt">The university library will remain open until midnight during exam week to accommodate study needs.</p>
+					</article>
+
+					<article class="notice-card">
+						<h3>Campus Maintenance Notice</h3>
+						<p class="meta">Published: Jan 3, 2026 • Facilities</p>
+						<p class="excerpt">Building A will be closed for maintenance from January 15-17. Classes in this building will be relocated.</p>
+					</article>
+
+					<article class="notice-card">
+						<h3>Scholarship Applications Open</h3>
+						<p class="meta">Published: Dec 28, 2025 • Financial Aid</p>
+						<p class="excerpt">Merit-based scholarship applications for the upcoming academic year are now open. Deadline: February 15, 2026.</p>
+					</article>
+
+					<article class="notice-card">
+						<h3>Guest Lecture: AI in Modern Computing</h3>
+						<p class="meta">Published: Dec 20, 2025 • Events</p>
+						<p class="excerpt">Dr. Sarah Johnson from MIT will deliver a guest lecture on January 25, 2026, at 2 PM in the auditorium.</p>
+					</article>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
