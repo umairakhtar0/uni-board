@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Admissions
 
 on:
   pull_request:
@@ -19,8 +19,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       
-      - name: Run HTMLHint on contact.html
-        run: npx htmlhint src/contact.html
+      - name: Run HTMLHint on admissions.html
+        run: npx htmlhint src/admissions.html
 
   css-lint:
     runs-on: ubuntu-latest
