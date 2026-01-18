@@ -65,7 +65,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Build Docker image
-        run: docker build -t faseeh1/uni-board:latest .
+        run: docker build -t umairakhtar0/homepage:latest .
       
       - name: Push Docker image
-        run: docker push faseeh1/uni-board:latest
+        run: docker push faseeh1/homepage:latest
