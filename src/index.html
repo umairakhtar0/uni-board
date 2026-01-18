@@ -1,138 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>UCP Notice Board</title>
-		<link rel="stylesheet" href="../styles/style.css">
-	</head>
-	<body>
-		<header class="site-header">
-			<div class="container header-inner">
-				<a class="brand" href="index.html">UCP Notice Board</a>
-				<button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-				<nav class="main-nav" aria-label="Main navigation">
-					<ul>
-						<li><a href="index.html" class="active">Home</a></li>
-						<li><a href="admissions.html">Admissions</a></li>
-						<li><a href="exams.html">Exams</a></li>
-						<li><a href="notices.html">Notices</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+<head>
+  <meta charset="UTF-8">
+  <title>UCP Notice Board | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <header>
+    <h1>University of Central Punjab</h1>
+    <p>Digital Notice Board – Lahore, Pakistan</p>
+  </header>
 
-		<main class="container">
-			<section class="hero">
-				<h1>Welcome to the UCP Notice Board</h1>
-				<p class="lede">Find the latest announcements, exam schedules, and important events for the university.</p>
-				<div class="hero-actions">
-					<a class="btn primary" href="notices.html">View All Notices</a>
-					<a class="btn" href="admissions.html">Admissions</a>
-				</div>
-			</section>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notices.html">Notices</a></li>
+      <li><a href="exams.html">Exams</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-			<section class="notices-section">
-				<div class="notices-header">
-					<h2>Latest Notices</h2>
-					<input id="search" class="search" type="search" placeholder="Search notices by title or keyword">
-				</div>
+  <main>
+    <section>
+      <h2>Welcome</h2>
+      <p>
+        This digital notice board provides the latest academic notices,
+        examination schedules, and admission updates for students of
+        the University of Central Punjab.
+      </p>
+    </section>
+  </main>
 
-				<div id="notices" class="notices-grid">
-					<!-- Sample notice cards -->
-					<article class="notice-card" data-title="Semester Start Date" data-body="Spring semester classes will start on Feb 2. All students must register before that date.">
-						<h3>Semester Start Date</h3>
-						<p class="meta">Published: Jan 10, 2026 • Academics</p>
-						<p class="excerpt">Spring semester classes will start on Feb 2. Register early.</p>
-					</article>
-
-					<article class="notice-card" data-title="Exam Timetable Released" data-body="The midterm exam timetable for most departments has been released. Check your department page for details.">
-						<h3>Exam Timetable Released</h3>
-						<p class="meta">Published: Jan 8, 2026 • Exams</p>
-						<p class="excerpt">Midterm exam schedule now available — check department pages.</p>
-					</article>
-
-					<article class="notice-card" data-title="Library Orientation" data-body="New students are invited to the library orientation session on Jan 25. Learn how to use library resources and databases.">
-						<h3>Library Orientation</h3>
-						<p class="meta">Published: Jan 5, 2026 • Events</p>
-						<p class="excerpt">Orientation for new students — Jan 25 at 10:00 AM in the main library.</p>
-					</article>
-
-					<article class="notice-card" data-title="Scholarship Applications" data-body="Applications for merit scholarships are open until Feb 15. Eligibility and forms are on the scholarships page.">
-						<h3>Scholarship Applications</h3>
-						<p class="meta">Published: Jan 3, 2026 • Financial Aid</p>
-						<p class="excerpt">Apply for merit scholarships — deadline Feb 15.</p>
-					</article>
-				</div>
-			</section>
-		</main>
-
-		<footer class="site-footer">
-			<div class="container">
-				<p>&copy; 2026 University of Central Punjab — Notice Board</p>
-			</div>
-		</footer>
-
-		<!-- Modal for notice details -->
-		<div id="modal" class="modal" role="dialog" aria-hidden="true">
-			<div class="modal-panel">
-				<button id="modalClose" class="modal-close" aria-label="Close">×</button>
-				<h3 id="modalTitle"></h3>
-				<p id="modalBody"></p>
-			</div>
-		</div>
-
-		<script>
-			(function(){
-				const navToggle = document.querySelector('.nav-toggle');
-				const nav = document.querySelector('.main-nav');
-				navToggle.addEventListener('click', ()=> nav.classList.toggle('open'));
-
-				const searchInput = document.getElementById('search');
-				const notices = Array.from(document.querySelectorAll('.notice-card'));
-				const noticesContainer = document.getElementById('notices');
-
-				function filterNotices() {
-					const q = searchInput.value.trim().toLowerCase();
-					notices.forEach(card => {
-						const title = card.dataset.title.toLowerCase();
-						const body = card.dataset.body.toLowerCase();
-						const matches = q === '' || title.includes(q) || body.includes(q);
-						card.style.display = matches ? '' : 'none';
-					});
-				}
-
-				searchInput.addEventListener('input', filterNotices);
-
-				// Modal
-				const modal = document.getElementById('modal');
-				const modalTitle = document.getElementById('modalTitle');
-				const modalBody = document.getElementById('modalBody');
-				const modalClose = document.getElementById('modalClose');
-
-				function openModal(title, body) {
-					modalTitle.textContent = title;
-					modalBody.textContent = body;
-					modal.setAttribute('aria-hidden', 'false');
-					modal.classList.add('open');
-				}
-				function closeModal() {
-					modal.setAttribute('aria-hidden', 'true');
-					modal.classList.remove('open');
-				}
-
-				notices.forEach(card => {
-					card.addEventListener('click', ()=> openModal(card.dataset.title, card.dataset.body));
-					card.addEventListener('keypress', e => { if(e.key === 'Enter') openModal(card.dataset.title, card.dataset.body); });
-					card.tabIndex = 0;
-				});
-
-				modalClose.addEventListener('click', closeModal);
-				modal.addEventListener('click', (e)=> { if(e.target === modal) closeModal(); });
-				document.addEventListener('keydown', (e)=> { if(e.key === 'Escape') closeModal(); });
-			})();
-		</script>
-	</body>
+  <footer>
+    <p>&copy; 2025 University of Central Punjab</p>
+  </footer>
+</body>
 </html>
-
