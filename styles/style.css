@@ -1,72 +1,54 @@
-:root{
-    --bg:#f6f7fb;
-    --card:#ffffff;
-    --primary:#0b61d5;
-    --muted:#6b7280;
-    --accent:#00a79d;
-    --max-width:1100px;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-    margin:0;
-    font-family: Inter, system-ui, Roboto, 'Segoe UI', Arial, sans-serif;
-    background:var(--bg);
-    color:#0f172a;
-    -webkit-font-smoothing:antialiased;
-}
-.container{max-width:var(--max-width);margin:0 auto;padding:0 16px}
 
-/* Header / Nav */
-.site-header{background:#fff;border-bottom:1px solid rgba(15,23,42,0.06);position:sticky;top:0;z-index:40}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.brand{font-weight:700;color:var(--primary);text-decoration:none;font-size:1.125rem}
-.nav-toggle{display:none;background:transparent;border:0;font-size:20px}
-.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:10px}
-.main-nav a{display:inline-block;padding:8px 12px;border-radius:6px;color:var(--muted);text-decoration:none}
-.main-nav a:hover{background:rgba(11,97,213,0.06);color:var(--primary)}
-.main-nav a.active{color:var(--primary);font-weight:600}
+/* Minimal, lint-friendly stylesheet */
 
-/* Hero */
-.hero{background:linear-gradient(90deg,#f7fbff,#ffffff);padding:36px;border-radius:10px;margin:22px 0;box-shadow:0 6px 18px rgba(11,97,213,0.04)}
-.hero h1{margin:0;font-size:1.8rem}
-.lede{color:var(--muted);margin:8px 0 16px}
-.hero-actions{display:flex;gap:12px}
-.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;color:#0f172a;background:transparent;border:1px solid rgba(15,23,42,0.06)}
-.btn.primary{background:var(--primary);color:#fff;border:0}
-
-/* Notices */
-.notices-section{margin-bottom:48px}
-.notices-header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.notices-header h2{margin:0;font-size:1.125rem}
-.search{min-width:180px;padding:8px 12px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)}
-.notices-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
-.notice-card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.04);cursor:pointer;transition:transform .14s ease,box-shadow .14s ease}
-.notice-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(2,6,23,0.08)}
-.notice-card h3{margin:0 0 6px;font-size:1rem}
-.meta{font-size:0.8rem;color:var(--muted);margin:0 0 8px}
-.excerpt{margin:0;color:#273041}
-
-/* Footer */
-.site-footer{padding:24px 0;text-align:center;color:var(--muted);font-size:0.95rem}
-
-/* Modal */
-.modal{position:fixed;inset:0;background:rgba(2,6,23,0.5);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .18s ease}
-.modal.open{opacity:1;pointer-events:auto}
-.modal-panel{background:var(--card);padding:20px;border-radius:10px;max-width:680px;width:92%;box-shadow:0 20px 60px rgba(2,6,23,0.3);position:relative}
-.modal-close{position:absolute;right:12px;top:8px;background:transparent;border:0;font-size:20px}
-
-/* Responsive */
-@media (max-width:800px){
-    .notices-grid{grid-template-columns:1fr}
-    .nav-toggle{display:inline-block}
-    .main-nav{position:absolute;top:64px;right:16px;background:#fff;border:1px solid rgba(15,23,42,0.06);padding:10px;border-radius:8px;display:none}
-    .main-nav.open{display:block}
-    .main-nav ul{flex-direction:column}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
 }
 
-@media (max-width:480px){
-    .hero h1{font-size:1.25rem}
-    .container{padding:0 12px}
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
 }
 
